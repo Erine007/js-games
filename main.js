@@ -8,8 +8,8 @@ c.height = window.innerHeight*.9;
 var bg = document.getElementById('bg');
 function animate(){
   if(player.dead){
-    alert("you suck")
-    window.location.href ="http://www.google.com"
+    //alert("you suck")
+    //window.location.href ="http://www.google.com"
     return;
   }
   ctx.drawImage(bg,0, 0 );

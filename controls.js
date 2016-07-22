@@ -3,7 +3,7 @@ $(document).keydown(function(e){
     player.velX = -5;
     player.dir = "left";
 }
-  if (e.keyCode == 38 ) player.velX = -5;
+  if (e.keyCode == 38 ) player.velY = -5;
   if (e.keyCode == 39 ){
   player.velX = 5;
   player.dir = "right";
@@ -18,10 +18,19 @@ $(document).keyup(function(e){
   if (e.keyCode == 39 ) player.velX = 0;
   if (e.keyCode == 40 ) player.velY = 0;
 });
-$(document).on('touchstart',function)(e){
-  console.log(e.touches[0]);
-  var touchX= e.touches[0]clientX;
-  var touchX= e.touches[0]clientY;
+$(document).on('touchmove',function(e){
+  console.log(e.touches[0]())
+  e.preventDefault();
+  var touchX= e.touches[0].clientX;
+  var touchY= e.touches[0].clientY;
+    if (touchX < player.x){
+      player.velX = -5;
+      player.dir = "left"
+    }
+    if (touchx > player.x){
+      player.velx =5;
+      player.dir ="right"
+    }
   if (touchX < player.x) player.velX = -5;
   if (touchX > player.x) player.velX = 5;
   if (touchX < player.y) player.velY = 5;
